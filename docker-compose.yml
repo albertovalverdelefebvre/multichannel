@@ -25,3 +25,11 @@ services:
     labels:
       - traefik.backend=lefebvre-imap-smtp-client
       - "traefik.frontend.rule=PathPrefixStrip:/"
+      
+  Google-client:
+    image: avalverdelefebvre/react-google-docker:new-design
+    ports:
+      - "8001:80"
+    labels:
+      - traefik.backend=lefebvre-google-client
+      - "traefik.frontend.rule=PathPrefixStrip:/"
