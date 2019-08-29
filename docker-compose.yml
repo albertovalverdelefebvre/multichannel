@@ -28,8 +28,8 @@ services:
       
   Google-client:
     image: avalverdelefebvre/react-imapsmtp-docker:client-newdesign-latest
-     ports:
+    ports:
       - "8001:8001"
-     labels:
-     - Lefebvre-Google-client
+    labels:
+      - Lefebvre-Google-client
      
