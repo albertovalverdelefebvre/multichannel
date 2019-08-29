@@ -27,9 +27,9 @@ services:
       - "traefik.frontend.rule=PathPrefixStrip:/"
       
   Google-client:
-    image: avalverdelefebvre/react-imapsmtp-docker:client-newdesign-latest
+    image: avalverdelefebvre/react-google:new-design
     ports:
-      - "8001:8001"
+      - "8082:80"
     labels:
       - Lefebvre-Google-client
      
