@@ -29,7 +29,7 @@ services:
   Google-client:
     image: avalverdelefebvre/react-google-docker:new-design
     ports:
-      - "8001:80"
+      - "8001:8001"
     labels:
       - traefik.backend=lefebvre-google-client
       - "traefik.frontend.rule=PathPrefixStrip:/"
