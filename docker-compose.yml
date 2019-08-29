@@ -19,7 +19,7 @@ services:
       - "traefik.frontend.rule=PathPrefixStrip:/api/"
 
   isotope-client:
-    image: avalverdelefebvre/react-imapsmtp-docker:client-new-design-latest
+    image: avalverdelefebvre/react-imapsmtp-docker:client-newdesign-latest
     ports:
       - "8081:80"
     labels:
