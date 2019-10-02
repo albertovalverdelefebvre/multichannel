@@ -1,12 +1,17 @@
-version: "3"
+version: '3.4'
 services:
- rabbitmq:
-    image: "rabbitmq:3-management"
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
     ports:
       - "5672:5672"
       - "15672:15672"
     volumes:
-      - 'rabbitmq_data:/data'
+      - rabbitmq:/var/lib/rabbitmq
+      - ./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
 
 volumes:
-  rabbitmq_data:
+  rabbitmq:
+
+networks:
+  server-network:
+    driver: bridge
