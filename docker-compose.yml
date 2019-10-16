@@ -30,16 +30,14 @@ services:
   Google-client:
     image: avalverdelefebvre/react-google-docker:new-design
     ports:
-      - "8084:80"
-      - "8084:443"
+      - "8082:80"     
     labels:
       - Lefebvre-Google-client
       
   Office365-client:
     image: avalverdelefebvre/react-office365-docker:new-design
     ports:
-      - "8082:80"
-      - "8082:443"
+      - "8083:80"      
     labels:
       - Lefebvre-Office365-client    
      
