@@ -27,17 +27,37 @@ services:
       - traefik.backend=lefebvre-imap-smtp-client
       - "traefik.frontend.rule=PathPrefixStrip:/"
       
+  Portal-client:
+    image: elefebvreoncontainers/portal.client:latest
+    ports:
+      - "8082:80"      
+    labels:
+      - Lefebvre-Portal-client    
+      
   Google-client:
     image: elefebvreoncontainers/google.client:latest
     ports:
-      - "8082:80"     
+      - "8083:80"     
     labels:
       - Lefebvre-Google-client
       
   Office365-client:
-    image: elefebvreoncontainers/Office365.client:latest
+    image: elefebvreoncontainers/office365.client:latest
     ports:
-      - "8083:80"      
+      - "8084:80"      
     labels:
       - Lefebvre-Office365-client    
-     
+      
+  Portal-client:
+    image: elefebvreoncontainers/account.client:latest
+    ports:
+      - "8085:80"      
+    labels:
+      - Lefebvre-Account-client   
+      
+  LexOn-client:
+    image: elefebvreoncontainers/lexon.client:latest
+    ports:
+      - "8086:80"      
+    labels:
+      - Lefebvre-lexon-client    
