@@ -12,7 +12,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
 
   isotope-server:
-    image: avalverdelefebvre/react-imapsmtp-docker:server-latest
+    image: elefebvreoncontainers/imapsmtp.client:server-latest
     ports:
       - "9010:9010"
     labels:
@@ -20,7 +20,7 @@ services:
       - "traefik.frontend.rule=PathPrefixStrip:/api/"
 
   isotope-client:
-    image: avalverdelefebvre/react-imapsmtp-docker:client-newdesign-latest
+    image: elefebvreoncontainers/imapsmtp.client:client-latest
     ports:
       - "8081:80"
     labels:
@@ -28,14 +28,14 @@ services:
       - "traefik.frontend.rule=PathPrefixStrip:/"
       
   Google-client:
-    image: avalverdelefebvre/react-google-docker:new-design
+    image: elefebvreoncontainers/google.client:latest
     ports:
       - "8082:80"     
     labels:
       - Lefebvre-Google-client
       
   Office365-client:
-    image: avalverdelefebvre/react-office365-docker:new-design
+    image: elefebvreoncontainers/Office365.client:latest
     ports:
       - "8083:80"      
     labels:
