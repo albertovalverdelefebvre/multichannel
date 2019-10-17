@@ -61,7 +61,7 @@ services:
     ports:
       - "8089:80"   
     volumes:
-      - ./src/ApiGateways/Web.Bff.Lexon/apigw:${ESHOP_OCELOT_VOLUME_SPEC:-/app/configuration}
+      - ./src/ApiGateways/Web.Bff.Lexon/apigw:${ESHOP_OCELOT_VOLUME_SPEC:-/lexon/configuration}
       
   accountgw:
     image: ${REGISTRY:-elefebvreoncontainers}/lefebvre.gw:${TAG:-latest}
@@ -77,7 +77,7 @@ services:
     ports:
       - "8090:80"   
     volumes:
-      - ./src/ApiGateways/Web.Bff.Account/apigw:${ESHOP_OCELOT_VOLUME_SPEC:-/app/configuration}      
+      - ./src/ApiGateways/Web.Bff.Account/apigw:${ESHOP_OCELOT_VOLUME_SPEC:-/account/configuration}      
 
 
 #  isotope-server:
