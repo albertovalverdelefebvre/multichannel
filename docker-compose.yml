@@ -61,7 +61,7 @@ services:
     ports:
       - "8089:80"   
     volumes:
-      - ./lexon/configuration 
+      - ./lexon 
       
   accountgw:
     image: ${REGISTRY:-elefebvreoncontainers}/lefebvre.gw:${TAG:-latest}
@@ -77,7 +77,7 @@ services:
     ports:
       - "8090:80"   
     volumes:
-      - ./account/configuration      
+      - ./account      
 
 
 #  isotope-server:
