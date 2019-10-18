@@ -31,5 +31,13 @@ services:
     ports:
       - "8082:80"
    
-
+#account.api: 82
+#account.gw: 83
+#lexon.mysql.api: 84
+#lexon.api: 85
+#lexon.gw: 86
+#portal: 87
+#google: 88
+#outlook: 89
+#lexon-app: 90
   
