@@ -31,10 +31,20 @@ services:
     ports:
       - "8082:80"
       
+  portal-client:
+    image: elefebvreoncontainers/portal.client:latest
+    ports:
+      - "8087:80"  
+      
   google-client:
     image: elefebvreoncontainers/google.client:latest
     ports:
       - "8088:80"
+      
+  lexon-client:
+    image: elefebvreoncontainers/lexonconnector.client:latest
+    ports:
+      - "8090:80"  
 
 
 #traefik console: 8080 OK
@@ -47,7 +57,7 @@ services:
 #portal.client: 8087
 #google.client: 8088
 #outlook.client: 8089
-#lexon.client: 8090
+#lexonconnector.client: 8090
 #rabbitmq console: 15672 
 #rabbitmq tcp: 5672
   
