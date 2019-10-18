@@ -44,7 +44,27 @@ services:
   lexon-client:
     image: elefebvreoncontainers/lexonconnector.client:latest
     ports:
-      - "8090:80"  
+      - "8090:80"
+      
+  lexongw:
+    image: elefebvreoncontainers/ocelot.lexon.gateway:latest
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Staging
+      - LexonUrlHC=http://lexon.api/hc
+      - LexonMySqlUrlHC=http://lexon.mysql.api/hc
+      - AccountsUrlHC=http://accounts.api/hc
+    ports:
+      - "8086:80"   
+      
+  accountsgw:
+    image: elefebvreoncontainers/ocelot.account.gateway:latest
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Staging
+      - LexonUrlHC=http://lexon.api/hc
+      - LexonMySqlUrlHC=http://lexon.mysql.api/hc
+      - AccountsUrlHC=http://accounts.api/hc
+    ports:
+      - "8083:80"   
 
 
 #traefik console: 8080 OK
