@@ -66,7 +66,23 @@ services:
     ports:
       - "8083:80"   
 
+  lexon.mysql.api:
+    image: ${REGISTRY:-elefebvreoncontainers}/lexon.mysql.api:${TAG:-latest}
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Staging
+    ports:
+      - "8084:80" 
+      
+  lexon.api:
+    image: ${REGISTRY:-elefebvreoncontainers}/lexon.api:${TAG:-latest}
+     depends_on:
+      - lexon.mysql.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Staging
+    ports:
+      - "8085:80"      
 
+  
 #traefik console: 8080 OK
 #smtp-imap.client: 8081 
 #account.service: 8082 OK
