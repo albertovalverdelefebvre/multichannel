@@ -75,7 +75,7 @@ services:
       
   lexon.api:
     image: ${REGISTRY:-elefebvreoncontainers}/lexon.api:${TAG:-latest}
-     depends_on:
+    depends_on:
       - lexon.mysql.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Staging
