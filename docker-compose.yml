@@ -30,14 +30,18 @@ services:
     image: elefebvreoncontainers/account.api:latest
     ports:
       - "8082:80"
-   
-#account.api: 82
-#account.gw: 83
-#lexon.mysql.api: 84
-#lexon.api: 85
-#lexon.gw: 86
-#portal: 87
-#google: 88
-#outlook: 89
-#lexon-app: 90
+
+#traefik console: 8080 OK
+#smtp-imap.client: 8081 
+#account.service: 8082 OK
+#account.gateway: 8083
+#lexon.mysql.service: 8084
+#lexon.service: 8085
+#lexon.gateway: 8086
+#portal.client: 8087
+#google.client: 8088
+#outlook.client: 8089
+#lexon.client: 8090
+#rabbitmq console: 15672 
+#rabbitmq tcp: 5672
   
