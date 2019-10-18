@@ -10,7 +10,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
-  isotope-server:
+  imap-server:
     image: avalverdelefebvre/react-imapsmtp-docker:server-latest
     ports:
       - "9010:9010"
@@ -18,7 +18,7 @@ services:
       - traefik.backend=lefebvre-imap-smtp-server
       - "traefik.frontend.rule=PathPrefixStrip:/api/"
 
-  isotope-client:
+  imap-client:
     image: avalverdelefebvre/react-imapsmtp-docker:client-newdesign-latest
     ports:
       - "8081:80"
