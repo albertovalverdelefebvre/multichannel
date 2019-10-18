@@ -36,10 +36,11 @@ services:
     ports:
       - "8088:80"
 
+
 #traefik console: 8080 OK
 #smtp-imap.client: 8081 
 #account.service: 8082 OK
-#account.gateway: 8083
+#account.gateway: 8083 OK
 #lexon.mysql.service: 8084
 #lexon.service: 8085
 #lexon.gateway: 8086
