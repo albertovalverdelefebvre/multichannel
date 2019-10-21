@@ -16,7 +16,7 @@ services:
       - "9010:9010"
     labels:
       - traefik.backend=lefebvre-imap-smtp-server
-      - "traefik.frontend.rule=PathPrefix:/api/"
+      - "traefik.frontend.rule=PathPrefixStrip:/api/"
 
   imap-client:
     image: elefebvreoncontainers/imap-smtp.client:latest
@@ -24,7 +24,7 @@ services:
       - "8081:80"
     labels:
       - traefik.backend=lefebvre-imap-smtp-client
-      - "traefik.frontend.rule=PathPrefix:/"  
+      - "traefik.frontend.rule=PathPrefixStrip:/"  
       
   account-api:
     image: elefebvreoncontainers/account.api:latest
