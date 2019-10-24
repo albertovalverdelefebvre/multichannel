@@ -81,7 +81,7 @@ services:
       - lexon.mysql.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Staging
-      - LexonMySqlUrl=https://lefebvre-mysql-service.azurewebsites.net/api
+      - LexonMySqlUrl=https://lefebvre-mysql-service.azurewebsites.net/api/v1/LexonMySql
       - ASPNETCORE_URLS=http://0.0.0.0:80
     ports:
       - "8085:80"      
