@@ -29,17 +29,32 @@ services:
 #      - ./src/ApiGateways/Web.Bff.Lexon/apigw:/app/configuration
 #      
   lexongw.fake:
-    image: ${REGISTRY:-elefebvreoncontainers}/ocelot.lexon.gateway:${TAG:-pruebas}
-#    image: ocelot.lexon.gateway:${TAG:-pruebas}
+    image: ${REGISTRY:-elefebvreoncontainers}/ocelot.lexon.gateway:${TAGTEST:-pruebas}
+#    image: ocelot.lexon.gateway:${TAGTEST:-pruebas}
     container_name: lexongw
     depends_on:
       - lexon.mysql.api
       - lexon.api
     networks:
       - backend
-  
+
+  account.api:
+    image: ${REGISTRY:-elefebvreoncontainers}/account.api:${TAGTEST:-pruebas}
+#    image: account.api:${TAGTEST:-pruebas}
+    container_name: account.api
+    networks:
+      - backend
+
+  accountgw.fake:
+    image: ${REGISTRY:-elefebvreoncontainers}/ocelot.account.gateway:${TAGTEST:-pruebas}
+#    image: ocelot.account.gateway:${TAGTEST:-pruebas}
+    container_name: accountgw
+    depends_on:
+      - account.api
+    networks:
+      - backend
+      
 networks:
 
   backend:
-    driver: bridge       
-
+    driver: bridge     
