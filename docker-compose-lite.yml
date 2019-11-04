@@ -70,7 +70,7 @@ services:
     networks:
       - backend
       
-   google-outlook:
+  outlook-client:
     container_name: google
     image: ${REGISTRY:-elefebvreoncontainers}/outlook.client:${TAGTEST:-pruebas}
     networks:
