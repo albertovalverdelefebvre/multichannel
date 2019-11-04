@@ -70,6 +70,12 @@ services:
     networks:
       - backend
       
+   google-outlook:
+    container_name: google
+    image: ${REGISTRY:-elefebvreoncontainers}/outlook.client:${TAGTEST:-pruebas}
+    networks:
+      - backend    
+      
   lexon-client:
     container_name: lexon-client
     image: ${REGISTRY:-elefebvreoncontainers}/lexon.client:${TAGTEST:-pruebas}
