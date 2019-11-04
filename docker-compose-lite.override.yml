@@ -5,6 +5,7 @@ services:
   reverse-proxy:
     ports:
       - "80:80"
+      - "443:443"
       - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock  
@@ -18,7 +19,7 @@ services:
 
   imap-client:
     ports:
-      - "8081:80"
+      - "8081:443"
     labels:
       - traefik.backend=lefebvre-imap-smtp-client
       - "traefik.frontend.rule=PathPrefixStrip:/" 
